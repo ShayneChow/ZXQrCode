@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "ZXScanViewController.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIImageView *qrCodeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoIconView;
 
 @end
 
@@ -47,6 +49,7 @@
         CIImage *outPutImage = [filter outputImage];
         //将CIImage转换成UImage并展示
         self.qrCodeImageView.image = [self createNonInterpolatedUIImageFormCIImage:outPutImage withSize:200.0];
+        _logoIconView.hidden = NO;
         self.qrCodeImageView.contentMode = UIViewContentModeScaleToFill;
 
     } else {
@@ -73,6 +76,22 @@
     CGContextRelease(bitmapRef);
     CGImageRelease(bitmapImage);
     return [UIImage imageWithCGImage:scaledImage];
+}
+
+- (IBAction)scanQrCode:(id)sender {
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ) {
+        UIAlertController *altC = [UIAlertController alertControllerWithTitle:@"提示" message:@"请检查设备相机!" preferredStyle:UIAlertControllerStyleAlert];
+        [altC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:altC animated:YES completion:nil];
+        return;
+    }else {
+        ZXScanViewController *scanVC = [[ZXScanViewController alloc] init];
+        [self.navigationController pushViewController:scanVC animated:YES];
+    }
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 @end

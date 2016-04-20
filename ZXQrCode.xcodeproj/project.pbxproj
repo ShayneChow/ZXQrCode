@@ -14,6 +14,9 @@
 		F0108CE11CC77A3600AD3CEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0108CE01CC77A3600AD3CEF /* Assets.xcassets */; };
 		F0108CE41CC77A3600AD3CEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0108CE21CC77A3600AD3CEF /* LaunchScreen.storyboard */; };
 		F0108CEC1CC77A5A00AD3CEF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0108CEB1CC77A5A00AD3CEF /* CoreImage.framework */; };
+		F0108CEF1CC7909500AD3CEF /* ZXScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0108CEE1CC7909500AD3CEF /* ZXScanViewController.m */; };
+		F0108CF21CC792CB00AD3CEF /* ZXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0108CF11CC792CB00AD3CEF /* ZXNavigationController.m */; };
+		F0108CF51CC79B2500AD3CEF /* ZXResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0108CF41CC79B2500AD3CEF /* ZXResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,12 @@
 		F0108CE31CC77A3600AD3CEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0108CE51CC77A3600AD3CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0108CEB1CC77A5A00AD3CEF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F0108CED1CC7909500AD3CEF /* ZXScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXScanViewController.h; sourceTree = "<group>"; };
+		F0108CEE1CC7909500AD3CEF /* ZXScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScanViewController.m; sourceTree = "<group>"; };
+		F0108CF01CC792CB00AD3CEF /* ZXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNavigationController.h; sourceTree = "<group>"; };
+		F0108CF11CC792CB00AD3CEF /* ZXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNavigationController.m; sourceTree = "<group>"; };
+		F0108CF31CC79B2500AD3CEF /* ZXResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXResultViewController.h; sourceTree = "<group>"; };
+		F0108CF41CC79B2500AD3CEF /* ZXResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +73,14 @@
 			children = (
 				F0108CD71CC77A3600AD3CEF /* AppDelegate.h */,
 				F0108CD81CC77A3600AD3CEF /* AppDelegate.m */,
+				F0108CF01CC792CB00AD3CEF /* ZXNavigationController.h */,
+				F0108CF11CC792CB00AD3CEF /* ZXNavigationController.m */,
 				F0108CDA1CC77A3600AD3CEF /* ViewController.h */,
 				F0108CDB1CC77A3600AD3CEF /* ViewController.m */,
+				F0108CED1CC7909500AD3CEF /* ZXScanViewController.h */,
+				F0108CEE1CC7909500AD3CEF /* ZXScanViewController.m */,
+				F0108CF31CC79B2500AD3CEF /* ZXResultViewController.h */,
+				F0108CF41CC79B2500AD3CEF /* ZXResultViewController.m */,
 				F0108CDD1CC77A3600AD3CEF /* Main.storyboard */,
 				F0108CE01CC77A3600AD3CEF /* Assets.xcassets */,
 				F0108CE21CC77A3600AD3CEF /* LaunchScreen.storyboard */,
@@ -156,6 +171,9 @@
 				F0108CDC1CC77A3600AD3CEF /* ViewController.m in Sources */,
 				F0108CD91CC77A3600AD3CEF /* AppDelegate.m in Sources */,
 				F0108CD61CC77A3600AD3CEF /* main.m in Sources */,
+				F0108CF51CC79B2500AD3CEF /* ZXResultViewController.m in Sources */,
+				F0108CEF1CC7909500AD3CEF /* ZXScanViewController.m in Sources */,
+				F0108CF21CC792CB00AD3CEF /* ZXNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

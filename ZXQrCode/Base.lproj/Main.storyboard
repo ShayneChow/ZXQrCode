@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tOP-Iv-KFY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="6oS-7V-YZ8">
+            <objects>
+                <navigationController id="tOP-Iv-KFY" customClass="ZXNavigationController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLp-pL-yL1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oPQ-SO-8Rj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8y-pN-qx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.5" y="429.5"/>
+        </scene>
+        <!--二维码-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -17,14 +34,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvv-PJ-yni">
-                                <rect key="frame" x="20" y="60" width="335" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvv-PJ-yni">
+                                <rect key="frame" x="20" y="86" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rot-0y-Bpf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-9W-gMY">
-                                <rect key="frame" x="85" y="111" width="205" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-9W-gMY">
+                                <rect key="frame" x="85" y="146" width="205" height="40"/>
                                 <color key="backgroundColor" red="0.99215686274509807" green="0.45098039215686275" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Jh1-EU-9Yd"/>
+                                    <constraint firstAttribute="width" constant="205" id="TeW-3F-wHg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="生成二维码">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -32,20 +57,65 @@
                                     <action selector="generateQrCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bz5-8m-c1E"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scan_window" translatesAutoresizingMaskIntoConstraints="NO" id="l4c-Jg-rUK">
-                                <rect key="frame" x="85" y="160" width="205" height="205"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-qW-ypa">
+                                <rect key="frame" x="85" y="440" width="205" height="40"/>
+                                <color key="backgroundColor" red="0.59215686274509804" green="0.93725490196078431" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="JGO-aO-Ees"/>
+                                    <constraint firstAttribute="height" constant="40" id="PSK-kk-u0g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="扫描二维码">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateQrCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aA3-Zc-Af3"/>
+                                    <action selector="scanQrCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8h-4E-J5g"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scan_window" translatesAutoresizingMaskIntoConstraints="NO" id="l4c-Jg-rUK">
+                                <rect key="frame" x="86" y="206" width="204" height="204"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="2uc-uh-FcC"/>
+                                    <constraint firstAttribute="height" constant="204" id="ag7-Xf-Hhk"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHT-lE-LYX">
-                                <rect key="frame" x="87" y="163" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHT-lE-LYX">
+                                <rect key="frame" x="87" y="209" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MM7-ZT-kLu"/>
+                                    <constraint firstAttribute="height" constant="200" id="l1h-wR-5gF"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wechat" translatesAutoresizingMaskIntoConstraints="NO" id="iNU-1S-9r2">
-                                <rect key="frame" x="167" y="243" width="40" height="40"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wechat" translatesAutoresizingMaskIntoConstraints="NO" id="iNU-1S-9r2">
+                                <rect key="frame" x="167" y="289" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GFN-HE-xYl"/>
+                                    <constraint firstAttribute="width" constant="40" id="Iis-ON-JZW"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="l4c-Jg-rUK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Zw-Yd-mO8"/>
+                            <constraint firstItem="Zvi-9W-gMY" firstAttribute="top" secondItem="nvv-PJ-yni" secondAttribute="bottom" constant="20" id="4gD-28-UKz"/>
+                            <constraint firstItem="nvv-PJ-yni" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="9k4-NV-UPk"/>
+                            <constraint firstItem="iNU-1S-9r2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AHH-m5-sTe"/>
+                            <constraint firstItem="wbx-qW-ypa" firstAttribute="top" secondItem="l4c-Jg-rUK" secondAttribute="bottom" constant="30" id="KxW-sR-ySy"/>
+                            <constraint firstItem="FHT-lE-LYX" firstAttribute="top" secondItem="Zvi-9W-gMY" secondAttribute="bottom" constant="23" id="Q8t-VE-drC"/>
+                            <constraint firstItem="wbx-qW-ypa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rds-7y-ecd"/>
+                            <constraint firstItem="iNU-1S-9r2" firstAttribute="top" secondItem="Zvi-9W-gMY" secondAttribute="bottom" constant="103" id="rPt-wG-A7z"/>
+                            <constraint firstItem="l4c-Jg-rUK" firstAttribute="top" secondItem="Zvi-9W-gMY" secondAttribute="bottom" constant="20" id="rYX-iA-kRW"/>
+                            <constraint firstAttribute="trailing" secondItem="nvv-PJ-yni" secondAttribute="trailing" constant="20" id="urU-VM-Xz8"/>
+                            <constraint firstItem="FHT-lE-LYX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vSB-J8-KWM"/>
+                            <constraint firstItem="Zvi-9W-gMY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xhF-4g-6HR"/>
+                            <constraint firstItem="nvv-PJ-yni" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="zUr-sO-31M"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="二维码" id="WCX-h5-XGB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="logoIconView" destination="iNU-1S-9r2" id="eGj-8s-BUY"/>
                         <outlet property="qrCodeImageView" destination="FHT-lE-LYX" id="9Zu-oj-eYx"/>
                         <outlet property="textField" destination="nvv-PJ-yni" id="Kuc-rX-cno"/>
                     </connections>
